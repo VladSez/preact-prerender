@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "name": "preact-app",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "per-env",
+    "start:production": "npm run -s serve",
+    "start:development": "npm run -s dev",
+    "build": "preact build --prerender --prerenderUrls src/prerender-urls.json",
+    "serve": "preact build --prerender --prerenderUrls src/prerender-urls.json && serve build --single",
+    "dev": "preact watch",
+    "lint": "eslint src",
+    "test": "jest"
+  },
+  "eslintIgnore": [
+    "build/*"
+  ],
+  "devDependencies": {
+    "jest": "^21.2.1",
+    "jest-preset-preact": "^1.0.0",
+    "per-env": "^1.0.2",
+    "preact-cli": "^3.0.0-rc.5",
+    "preact-render-spy": "1.2.1",
+    "serve": "^11.2.0"
+  },
+  "dependencies": {
+    "preact": "^10.0.0-rc.3",
+    "preact-render-to-string": "^5.0.6",
+    "preact-router": "^3.0.1"
+  },
+  "jest": {
+    "preset": "jest-preset-preact"
+  }
+}
